@@ -37,7 +37,7 @@ function Header(props) {
     },
   });
 
-  const isLoggedIn = localStorage.getItem("userregister");
+  const isLoggedIn = localStorage.getItem("userregisterdata");
 
   const isHomeRoute = location.pathname === "/home";
 

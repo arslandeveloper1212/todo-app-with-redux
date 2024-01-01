@@ -18,7 +18,7 @@ function App() {
           path="/home"
           element={<ProtectedRoute element={<AddNoteForm />} />}
         />
-        <Route path='*' navigate to="/signin"/>
+        
 
     </Routes>
     

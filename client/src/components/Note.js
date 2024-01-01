@@ -11,9 +11,13 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
+  useTheme,
 } from '@mui/material';
 
+
 const Note = ({ id, title, text }) => {
+
+  const theme = useTheme();
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(title);
@@ -71,7 +75,12 @@ const Note = ({ id, title, text }) => {
           <Button onClick={handleModalOpen} variant="contained" color="success">
             View
           </Button>
-          <Button sx={{marginLeft:"10px"}} onClick={() => handleRemove()} variant="contained" color="error">
+          <Button sx={{
+            [theme.breakpoints.up('sm')]: {
+             flexdirection:"row",
+             marginLeft: "10px"
+            }
+          }} onClick={() => handleRemove()} variant="contained" color="error">
             Delete
           </Button>
         </TableCell>
@@ -108,11 +117,16 @@ const Note = ({ id, title, text }) => {
         </DialogContent>
         <DialogActions>
           {isEditing ? (
-            <div style={{display:"flex"}}>
+            <div style={{ display: "flex" }}>
               <Button onClick={handleUpdate} variant="contained" color="success">
                 Update
               </Button>
-              <Button sx={{marginLeft:"10px"}} onClick={handleCancelEdit} variant="contained" color="secondary">
+              <Button sx={{
+            [theme.breakpoints.up('sm')]: {
+            flexdirection:"row",
+             marginLeft: "10px"
+            }
+          }} onClick={handleCancelEdit} variant="contained" color="secondary">
                 Cancel
               </Button>
             </div>

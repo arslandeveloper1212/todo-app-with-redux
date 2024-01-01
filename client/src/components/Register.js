@@ -49,7 +49,7 @@ const Register = () => {
         console.log('Registered successfully');
         alert('Registered successfully');
         navigate('/home');
-        localStorage.setItem('userregister', JSON.stringify(result.data));
+        localStorage.setItem('userregisterdata', JSON.stringify(result));
         toast.success('Registration successful');
         setSubmitting(false);
       }
